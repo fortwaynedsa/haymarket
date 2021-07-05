@@ -2,3 +2,7 @@
 ---
 
 @import 'jekyll-theme-haymarket';
+
+#page-header #project-area #page-title, #page-header #project-area #tagline {
+    max-width: 100%;
+}
