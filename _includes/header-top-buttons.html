@@ -17,7 +17,7 @@
 		{% endif %}
 	</ul>
 	{% for element in site.data.nav.top-buttons %}
-		<div class="join">
+		<div class="join"{% if element.button.color %} style="background-color: {{ element.button.color }}"{% endif %}>
 			<a href="{{ element.button.url.[page.lang] | default: element.button.url.default | relative_url }}">{{ element.button.[page.lang] | default: element.button.en | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines }}</a>
 		</div>
 	{% endfor %}
