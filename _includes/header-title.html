@@ -6,7 +6,11 @@
 	<h1 id="page-title">{{ site.data.translations.title.[page.lang] | default: site.github.repository_name | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines }}</h1>
 {% endif %}
 {% if page.subhead %}
+	{% if page.layout != "event" %}
 	<p id="tagline">{{ page.subhead | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines }}</p>
+	{% else %}
+	<p id="tagline">{{ page.date | date: "%A, %B %e, %Y" }}</p>
+	{% endif %}
 {% elsif page.description %}
 	<p id="tagline">{{ page.description | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines }}</p>
 {% endif %}
