@@ -365,7 +365,7 @@ a,
 
     #page-title,
     #tagline {
-      margin: 2rem 0 0 0;
+      margin: 0.5rem 0 0 0;
       color: $white;
     }
 
@@ -680,19 +680,13 @@ a,
         max-width: 90%;
       }
 
-      #tagline {
-        max-width: 75%;
-      }
     }
 
     @include extra-small {
       #page-title {
         max-width: 100%;
       }
-
-      #tagline {
-        max-width: 80%;
-      }
+      
     }
   }
 }
