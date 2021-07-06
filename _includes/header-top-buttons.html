@@ -17,13 +17,9 @@
 		{% endif %}
 	</ul>
 	{% for element in site.data.nav.top-buttons %}
-		{% if element.buttons %}
-			{% for item in element.buttons %}
-	<div class="join">
-		<a href="{{ item.button.url.[page.lang] | default: item.button.url.default | relative_url }}">{{ item.button.[page.lang] | default: item.button.en | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines }}</a>
-	</div>
-			{% endfor %}
-		{% endif %}
+		<div class="join">
+			<a href="{{ element.button.url.[page.lang] | default: element.button.url.default | relative_url }}">{{ element.button.[page.lang] | default: element.button.en | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines }}</a>
+		</div>
 	{% endfor %}
 </div>
 <div style="clear: both;"></div>
