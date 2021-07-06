@@ -7,7 +7,18 @@
 		  {% if page.image != site.defaults[0].values.image %}
 			  {% include event-image.html image=page.image description=page.image-description credit=page.image-credit %}
 		  {% endif %}
-      {{ content }}</main>
+      		  {{ content }}
+		  {% if page.actionnetwork %}
+			<link href='https://actionnetwork.org/css/style-embed-whitelabel-v3.css' rel='stylesheet' type='text/css' />
+			<style>
+			.last_line {
+				display: none;	
+			}
+			</style>
+			<script src='https://actionnetwork.org/widgets/v4/event/{{ page.actionnetwork }}?format=js&source=widget'></script>
+			<div id='can-event-area-{{ page.actionnetwork }}' style='width: 100%'></div>
+		  {% endif %}
+		</main>
 		{% include footer-container.html %}
 	</body>
 </html>
