@@ -5,10 +5,10 @@
 {% else %}
 	<h1 id="page-title">{{ site.data.translations.title.[page.lang] | default: site.github.repository_name | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines }}</h1>
 {% endif %}
-{% if page.layout == "event" %}
-	<p id="tagline">{{ page.date | date: "%A, %B %e, %Y" }}</p>
-{% elsif page.subhead %}
+{% if page.subhead %}
 	<p id="tagline">{{ page.subhead | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines }}</p>
 {% elsif page.description %}
 	<p id="tagline">{{ page.description | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines }}</p>
+{% elsif page.date %}
+	<p id="tagline">{{ page.date | date: "%A, %B %e, %Y" }}</p>
 {% endif %}
