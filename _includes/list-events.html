@@ -2,8 +2,8 @@
 	{% assign sortedCollection = site.[include.collection] | where: "lang", page.lang | sort: "order" %}
 	{% assign limit = include.limit %}
 	{% for item in sortedCollection limit:limit %}
-		{% assign date = item.date | date: "%A, %B %e, %Y" %}
-		{% assign title = item.title | append '<br /><small>' | append date | append '</small>' %}
+		{% assign idate = item.date | date: "%A, %B %e, %Y" %}
+		{% assign title = item.title | append "<br /><small>" | append idate | append "</small>" %}
 		{% assign url = item.url | relative_url %}
 		{% assign image = item.image | relative_url %}
 		{% assign image-description = item.image-description | markdownify | remove: "<p>" | remove: "</p>" %}
