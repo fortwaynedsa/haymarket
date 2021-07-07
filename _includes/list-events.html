@@ -1,4 +1,4 @@
-<ul class="tile-list">
+<ul class="event-list">
 	{% assign sortedCollection = site.[include.collection] | where: "lang", page.lang | sort: "order" %}
 	{% assign limit = include.limit %}
 	{% for item in sortedCollection limit:limit %}
