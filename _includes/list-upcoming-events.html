@@ -2,9 +2,11 @@
   {% capture now %}{{'now' | date: '%s' | plus: 0 %}}{% endcapture %}
 	{% assign sortedCollection = site.[include.collection] | where: "lang", page.lang | sort: "order" %}
 	{% assign limit = include.limit %}
-	{% for item in sortedCollection limit:limit %}
+	{% assign counter = 0 %}
+	{% for item in sortedCollection %}
     {% capture date %}{{item.date | date: '%s' | plus: 0 %}}{% endcapture %}
-    {% if date >= now %}
+    {% if date >= now and counter < limit %}
+      {% assign counter = counter | plus:1 %}
       {% assign idate = item.date | date: "%A, %B %e, %Y" %}
       {% assign title = item.title | append: "<br /><small>" | append: idate | append: "</small>" %}
       {% assign url = item.url | relative_url %}
