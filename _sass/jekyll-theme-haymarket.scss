@@ -778,6 +778,11 @@ a,
     background-color: $border-color;
   }
 
+  h2 small, h3 small, h4 small, h5 small {
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
   /* Inline images */
 
   p {
@@ -905,10 +910,6 @@ a,
     }
   }
   
-      h2 small, h3 small, h4 small, h5 small {
-        font-weight: 400;
-        text-transform: uppercase;
-      }
 
   .tile-container-image {
     .image .overlay {
